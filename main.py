@@ -176,4 +176,4 @@ def authorization():
     return cache_handler, auth_manager
 
 
-web.run(app, threaded=True, port="5050")
+web.run(app, threaded=True, host="0.0.0.0", port="8080")
