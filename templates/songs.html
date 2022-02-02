@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+        
+        a{text-decoration: none;}
+        button{
+            background-color: #1DB954; /* Green background */
+            border: 2px solid rgb(46, 46, 46); /* Green border */
+            color: white; /* White text */
+            padding: 10px 28px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            width: 20%; /* Set a width if needed */
+            border-radius: 12px;
+        }
+    </style>
+
+
+    <meta charset="UTF-8">
+    <form action="{{ url_for('index')}}">
+        <button type="submit">Back to your Playlists.</button>
+    </form>
+    
+    <title>Your Songs</title>
+</head>
+    <body style="background-color:#1c1d1e">
+        <style>
+            h1{
+            
+            
+            }
+            table{
+                margin-left: auto;
+                margin-right: auto;
+                background-color: #ffffff; /* Green background */
+                border: 2px solid rgb(219, 219, 219); /* Green border */
+                color: rgb(27, 27, 27); /* White text */
+                padding: 10px 28px; /* Some padding */
+                width: 20%; /* Set a width if needed */
+
+            }
+            h1{
+                margin: auto;
+                text-align: center;
+                background-color: #ffffff; /* Green background */
+                border: 2px solid rgb(219, 219, 219); /* Green border */
+                color: rgb(27, 27, 27); /* White text */
+                padding: 10px 28px; /* Some padding */
+                width: 20%; /* Set a width if needed */
+                
+            }
+        </style>
+        <h1>Your songs</h1>
+            <table>
+            <!-- Table headers -->
+                <th>
+                    <tr style="color: green; ">
+                    <td>Name</td>
+                    <td>Artist</td>
+                    <td>BPM</td>
+                    <td>Key</td>
+            </tr>
+                </th>
+
+            <!-- For loop logic of jinja template -->
+            {%for i in songList%}
+
+            <!-- table rows -->
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+
+            {%endfor%}
+
+            </tr>
+
+            </table>
+    </body>
+</html>
