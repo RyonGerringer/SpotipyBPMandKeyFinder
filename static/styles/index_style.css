@@ -1,0 +1,104 @@
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle {
+  outline: 0;
+}
+/* here is the style for text on the user greeting. */
+h1{color: white;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+/* here is the style for text on the buttons. */
+a{text-decoration: none;}
+
+
+/* here is the style for the button group. */
+.btn-group button {
+  margin: auto;
+  position:relative;
+  background-color: #1DB954; /* Green background */
+  border: 2px solid rgb(46, 46, 46); /* Green border */
+  color: white; /* White text */
+  padding: 15px 28px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 50%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+  border-radius: 4px;
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+  font-size: 25px;
+} 
+.btn-group button:active{
+  background: #178a3f;
+}
+.button__text {
+  font: bold 16px 'Quicksand', san-serif;
+  color:rgb(255, 255, 255);
+  transition: all 0.2s;
+
+}
+.button--loading .button__text{
+  visibility: hidden;
+  opacity: 0;
+}
+.button--loading::after{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 5px solid transparent;
+  border-top-color:rgb(252, 252, 252);
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+@keyframes button-loading-spinner {
+  from{
+    transform: rotate(0turn);
+  }
+  to{
+    transform: rotate(1turn);
+  }
+  
+}

@@ -104,17 +104,49 @@ def showSongs(playlist_id):
 
 def getSongs(tracks):
     
+    keyDict = {
+        -1:'N/A',
+        0:'C',
+        1:'C♯/D♭',
+        2:'D',
+        3:'D♯/E♭',
+        4:'E',
+        5:'F',
+        6:'F♯/G♭',
+        7:'G',
+        8:'A♯/B♭',
+        9:'B',
+        10:'C',
+        11:'C♯/D♭',
+    }
+    modeDict ={
+        0:'Minor',
+        1:'Major'
+    }
     songList = []
+    for item in tracks['items']:
 
-    
-    
+        sp = userConnect()
+        track = item['track']
+        id = track['id']
+        name = track['name']
+        artist_name = track['artists'][0]['name']
+        key = ''
+        bpm = ''
+        results = sp.audio_features(id)[0]
+        print(results)
+        keyResult = results['key']
+        key = keyDict[keyResult]
+        
+        modeResult = results['mode']
+        mode = modeDict[modeResult]
 
-    def getSongList(item):
-        songList.append(getSongInfo(item))
-   
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        executor.map(getSongList, tracks['items'])
-   #for item in tracks['items']:
+        print(f"Key: {key}{mode}")
+        
+        #key += mode
+        bpm = results['tempo']
+        bpm = round(int(bpm))
+        songList.append([name, artist_name, bpm, key])
 
     
         
@@ -123,16 +155,25 @@ def getSongs(tracks):
 
 
 def getSongInfo(item):
-
+    sp = userConnect()
     track = item['track']
+    id = track['id']
     name = track['name']
     artist_name = track['artists'][0]['name']
-
+    bpm = ''
+    key = ''
+    results = sp.audio_features(id)[0]
+    print(results)
+    '''key = results['key']
+    mode = results['mode']
+    key += mode
+    bpm = results['tempo']'''
 
     #songs[name] = artist_name
 
     #print(key,bpm)
-    key, bpm = scraper.findBPMandKey([artist_name, name])
+
+    # key, bpm = scraper.findBPMandKey([artist_name, name])
     
     return [name, artist_name, bpm, key]
     

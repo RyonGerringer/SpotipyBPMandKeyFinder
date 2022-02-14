@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
 
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<link rel="stylesheet" href="./templates/style.css">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/style.css')}}">
 
 </head>
 <body>
@@ -27,15 +28,10 @@
 		<h5>Login With Spotify</h5>
 		<p>By redirecting you to spotify they can ensure we only access data that you allow us to see.</p>
 		<div class="inputs">
-			<h2><a href="{auth}">Sign in</a></h2>
+			<h2><a href="{{auth}}">
+				<button class="button-64">Login With Spotify API</button>
+			</a></h2>
 		</div>
-			
-			<br><br>
-			
-		
-			
-			<br>
-			<button>Login With Spotify API</button>
 			<br><br><br><br><br>
 			
 	</div>
