@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify Playlists</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/playlists_style.css')}}">
+</head>
+
+<body>
+  
+  <h1>
+    
+    <img src={{profile_picture}} alt="Avatar" class="avatar">
+    Hi {{display_name}},
+    <div class="signOut-button">
+        <form action="{{ url_for('signOut')}}">
+            <button type="submit">Sign Out</button>
+        </form>
+    </div>
+  </h1>
+    
+    
+  
+  
+  <h1>Choose a Playlist.</h1>
+  
+    <div class="btn-group">
+        {% for id, playlist in playlists.items() %}
+          
+          <form action="{{ url_for('showSongs', playlist_id=id) }}">
+            <button type="submit" 
+                    class="button"
+                    onclick="this.classList.toggle('button--loading')"
+            >
+                <span class="button__text">{{playlist}}</span>
+            </button>
+          </form>
+          
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>

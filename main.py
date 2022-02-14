@@ -53,7 +53,7 @@ def index():
     
     profile_picture = getProfilePicture(spotify)
 
-    return render_template('results.html', playlists = playlists, display_name = spotify.me()['display_name'],
+    return render_template('playlists.html', playlists = playlists, display_name = spotify.me()['display_name'],
     profile_picture=profile_picture)
 
 

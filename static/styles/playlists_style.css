@@ -1,41 +1,14 @@
-.b-example-divider {
-  height: 3rem;
-  background-color: rgba(0, 0, 0, .1);
-  border: solid rgba(0, 0, 0, .15);
-  border-width: 1px 0;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+body{
+    background-color:#1c1d1e;
 }
 
-.form-control-dark {
-  color: #fff;
-  background-color: var(--bs-dark);
-  border-color: var(--bs-gray);
-}
-.form-control-dark:focus {
-  color: #fff;
-  background-color: var(--bs-dark);
-  border-color: #fff;
-  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
-}
-
-.bi {
-  vertical-align: -.125em;
-  fill: currentColor;
-}
-
-.text-small {
-  font-size: 85%;
-}
-
-.dropdown-toggle {
-  outline: 0;
-}
 /* here is the style for text on the user greeting. */
 h1{color: white;
   text-align: center;
   margin: auto;
   width: 50%;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 /* here is the style for text on the buttons. */
@@ -101,4 +74,29 @@ a{text-decoration: none;}
     transform: rotate(1turn);
   }
   
+}
+.avatar {
+    vertical-align: middle;
+    width: 75px;
+    height: 75px;
+    border: 2px solid transparent;
+    border-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+.signOut-button button{text-decoration: none;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background-color: #ffffff; /* Green background */
+    border: 2px solid rgb(46, 46, 46); /* Green border */
+    color: rgb(0, 0, 0); /* White text */
+    padding: 10px 15px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 30%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+    border-radius: 12px;
+}
+.signOut-button button:hover {
+    background-color: #bebebe;
+    font-size: 15px;
 }
